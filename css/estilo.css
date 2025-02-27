@@ -1,0 +1,887 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #E3E3E3;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+header .btn-contato button, .hero-site button, .foodtruck button{
+    font-size: 18px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+header .btn-contato button:hover, .hero-site button:hover, .foodtruck button:hover{
+    background-color: rgba(211, 119, 15, 0.979);
+    color: #fff;
+}
+
+/* ESTILO DA HEADER */
+
+header{
+    width: 100%;
+    padding: 40px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .5s;
+}
+
+header .interface{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img{
+    max-width: 80px;
+    transition: 0.2s;
+}
+
+header .logo img:hover{
+    transform: scale(1.05);
+}
+
+header .menu-desktop nav ul{
+    list-style-type: none;
+}
+
+header .menu-desktop nav ul li{
+    display: inline-block;
+    margin: 0 40px;
+}
+
+header .menu-desktop nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+header .menu-desktop nav ul li a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FF6347;
+    transition: width 0.3s ease;
+}
+
+
+.menu-desktop nav a:hover{
+    transform: scale(1.05);
+}
+
+/* ESTILO DOS ÍCONES MODAIS DA HEADER */
+.btn-icones{
+    display: flex;
+    gap: 75px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.btn-icones i{
+    font-size: 24px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-icones i:hover{
+    color: #ff9a9e;
+    transform: scale(1.2);
+    text-shadow: 2px 2px 10px rgba(255, 107, 107, 0.5); /* Efeito de brilho sutil */
+}
+
+/* ESTILO DA MODAL DE LOGIN */
+.modal{
+    display: none; /* A modal começa oculta */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal.show{
+    display: flex;
+}
+
+.login-span{
+    color: #DF8B03;
+    font-weight: 700;
+}
+
+.form-container{
+    width: 320px;
+    border-radius: 0.75rem;
+    background-color: #fff;
+    padding: 2rem;
+    color: rgba(243, 244, 246, 1);
+}
+  
+.title{
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #000;
+}
+  
+.form{
+    margin-top: 1.5rem;
+}
+  
+.input-group{
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+  
+.input-group label{
+    display: block;
+    color: #000;
+    margin-bottom: 4px;
+}
+  
+.input-group input{
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid rgb(100, 100, 100);
+    outline: 0;
+    background-color: rgb(221, 221, 221);
+    padding: 0.75rem 1rem;
+    color: rgba(243, 244, 246, 1);
+}
+  
+.input-group input:focus{
+    border-color: rgba(167, 139, 250);
+}
+  
+.forgot{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: #000;
+    margin: 8px 0 14px 0;
+}
+  
+.forgot a,.signup a{
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+}
+  
+.forgot a:hover, .signup a:hover{
+    text-decoration: underline rgba(167, 139, 250, 1);
+}
+  
+.sign{
+    display: block;
+    width: 100%;
+    background-color: #DF8B03;
+    padding: 0.75rem;
+    text-align: center;
+    color: rgba(17, 24, 39, 1);
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.4s ease;
+}
+
+.sign::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: #ffba08;
+    transition: transform 0.6s ease;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    transform-origin: center;
+}
+
+.sign:hover{
+    color: #fff;
+}
+
+.sign:hover::before{
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+}
+
+.social-message{
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+}
+  
+.line{
+    height: 1px;
+    flex: 1 1 0%;
+    background-color: rgba(55, 65, 81, 1);
+}
+  
+.social-message .message{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgb(77, 77, 77);
+}
+  
+.social-icons{
+    display: flex;
+    justify-content: center;
+}
+  
+.social-icons .icon{
+    border-radius: 0.125rem;
+    padding: 0.75rem;
+    border: none;
+    background-color: transparent;
+    margin-left: 8px;
+}
+  
+.social-icons .icon svg{
+    height: 1.25rem;
+    width: 1.25rem;
+    fill: rgb(24, 24, 24);
+}
+  
+.signup{
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: rgb(77, 77, 77);
+}
+  
+/* FIM DO ESTILO DA MODAL DE LOGIN */
+
+button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e65c00;
+}
+
+/*  ESTILO DO BOTÃO MOBILE */
+header .btn-menu-mob{
+    display: none;
+    position: relative;
+    z-index: 10;
+}
+
+header .btn-menu-mob div{
+    background-color: #fff;
+    height: 3px;
+    margin: 10px 0;
+    transition: .2s;
+}
+
+header .btn-menu-mob .line-menumob-1{
+    width: 30px;
+}
+
+header .btn-menu-mob .line-menumob-2{
+    width: 20px;
+}
+
+/* ESTILO DO MENÚ DINÂMICO */
+
+header.rolar{
+    background-color: rgba(211, 119, 15, 0.979);
+    padding: 20px 0;
+    z-index: 10;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.329);
+}
+
+header.rolar .menu-desktop nav ul li a{
+    color: #fff;
+}
+
+header.rolar .btn-contato button{
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+header.rolar .btn-contato button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+header .btn-menu-mob .line-menumob-1.ativo1{
+    transform: rotate(45deg) translate(30%);
+}
+
+header .btn-menu-mob .line-menumob-2.ativo2{
+    transform: rotate(-45deg) translate(30%);
+    width: 30px;
+}
+
+/* ESTILO DO MENÚ MOBILE */
+header .menu-mobile{
+    width: 0;
+    height: 0;
+    background-color: rgba(211, 119, 15, 0.979);
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    transition: .5s;
+}
+
+header .menu-mobile nav{
+    width: 100%;
+}
+
+header .menu-mobile nav ul{
+    list-style-type: none;
+}
+
+header .menu-mobile nav a{
+    font-size: 24px;
+    text-decoration: none;
+    color: #fff;
+    padding: 20px 0;
+    display: block;
+    transition: .5s;
+}
+
+header .menu-mobile nav a:hover{
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 20px #fff;
+}
+
+header .menu-mobile.abrir{
+    width: 100%;
+    height: 100vh;
+}
+
+body.no-overflow{
+    overflow: hidden;
+}
+
+/* ESTILO DO HERO */
+section.hero-site{
+    height: 100vh;
+    background-image: url(../images/fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.hero-site .interface{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.hero-site .txt-hero h1{
+    font-size: 4em;
+    line-height: 70px;
+    font-weight: 500;
+}
+
+.hero-site .txt-hero h1 span{
+    display: block;
+    font-weight: 800;
+}
+
+.hero-site .txt-hero .aviso{
+    font-weight: 700;
+}
+
+.hero-site .txt-hero p{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px 0;
+    text-shadow: #000;
+}
+
+.hero-site .txt-hero p span{
+    display: block;
+}
+
+.hero-site button{
+    width: 220px;
+    height: 60px;
+    font-size: 20px;
+}
+
+/*  ESTILO DO CARDÁPIO */
+section.cardapio {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.cardapio .itens-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10%;
+    margin-bottom: 60px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardapio .itens-container .img-itens img {
+    max-width: 480px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.cardapio .itens-container .img-itens img:hover {
+    transform: scale(1.05);
+}
+
+.txt-itens-bebidas{
+    margin: 0 200px;
+}
+
+.cardapio .itens-container .txt-itens h3 {
+    font-size: 2.5em;
+    font-weight: 500;
+    line-height: 50px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.cardapio .itens-container .txt-itens-bebidas h3 {
+    font-size: 2.5em;
+    font-weight: 500;
+    line-height: 50px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.cardapio .itens-container .txt-itens h3 span {
+    font-weight: 700;
+    color: #f15a24;
+}
+
+.cardapio .itens-container .txt-itens-bebidas h3 span {
+    font-weight: 700;
+    color: #f15a24;
+}
+
+.cardapio .itens-container .txt-itens p {
+    margin: 8px 0;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.cardapio .itens-container .txt-itens-bebidas p {
+    margin: 8px 0;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.cardapio .itens-container .txt-itens .preco {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 10px;
+}
+
+.cardapio .itens-container .txt-itens-bebidas .preco {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 10px;
+}
+
+.cardapio .itens-container .txt-itens .adicional {
+    display: inline-block;
+    font-size: 1em;
+    color: #dc3545;
+    margin-top: 5px;
+}
+
+.cardapio .itens-container .txt-itens .btn-pedir {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0 15px;
+    background-color: rgba(211, 119, 15, 0.979);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cardapio .itens-container .txt-itens-bebidas .btn-pedir {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0 15px;
+    background-color: #FF6347;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden; 
+}
+
+.cardapio .itens-container .txt-itens .btn-pedir:hover {
+    background-color: rgba(255, 165, 0, 0.9);
+    transform: scale(1.05);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cardapio .itens-container .txt-itens-bebidas .btn-pedir:hover {
+    background-color: rgba(255, 165, 0, 0.9);
+    transform: scale(1.05);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cardapio .itens-container .txt-itens .btn-pedir::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.cardapio .itens-container .txt-itens-bebidas .btn-pedir::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.cardapio .itens-container .txt-itens .btn-pedir:hover::before{
+    width: 0;
+    height: 0;
+}
+
+.cardapio .itens-container .txt-itens-bebidas .btn-pedir:hover::before{
+    width: 0;
+    height: 0;
+}
+
+.categoria-titulo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 2rem 0 1rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.5rem;
+}
+
+
+/* ESTILO DOS BOTÕES DE CONTATO */
+
+section.contato{
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.txt-contato, .icons-contato{
+    display: inline-block;
+    width: 50%;
+    margin-right: -4px;
+    vertical-align: middle;
+}
+
+.contato .txt-contato h3{
+    font-size: 2.5em;
+    line-height: 50px;
+    font-weight: 300;
+}
+
+.contato .txt-contato h3 span{
+    display: block;
+    font-weight: 700;
+}
+
+.contato .icons-contato a{
+    text-decoration: none;
+}
+
+.contato .icons-contato button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    width: 60%;
+    height: 60px;
+    margin: 0 auto 20px auto;
+    background-color: transparent;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.contato .icons-contato button i{
+    font-size: 22px;
+    color: #000;
+}
+
+.contato .icons-contato button p{
+    color: #000;
+}
+
+.contato .icons-contato button:hover{
+    background-color: rgba(211, 119, 15, 0.979);
+}
+
+.contato .icons-contato button:hover i, .contato .icons-contato button:hover p{
+    color: #fff;
+}
+
+/* ESTILO DA SEÇÃO "SOBRE NÓS" */
+section.foodtruck{
+    height: 600px;
+    background-image: url(../images/foodtruck.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+.foodtruck > .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.87);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.foodtruck > .interface{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    z-index: 2;
+    position: relative;
+}
+
+.foodtruck h3{
+    font-size: 3em;
+    line-height: 50px;
+    font-weight: 100;
+}
+
+.foodtruck h3 span{
+    display: block;
+    font-weight: 700;
+}
+
+.foodtruck p{
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.foodtruck button{
+    width: 220px;
+    height: 60px;
+}
+
+/* ESTILO DO MODAL */
+.modal{
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content{
+    position: relative; /* Para posicionar o botão de fechar */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close:hover{
+    color: #ff0000;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input, form textarea, form button{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button{
+    background-color: #28a745;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover{
+    background-color: #218838;
+}
+
+/* ESTILO DO MAPA */
+#mapa{
+    padding-top: 70px;
+}
+
+.info{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 25px;   
+}
+
+.info h1{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+main{
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* ESTILO DO RODAPÉ */
+
+footer{
+    background-color: rgba(211, 119, 15, 0.979);
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer .top-footer button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: .5s;
+}
+
+footer .top-footer button i{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 auto;
+}
+
+footer .top-footer button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+footer .middle-footer{
+    margin: 20px 0;
+}
+
+footer .middle-footer a{
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+footer .bottom-footer{
+    border-top: 2px solid #fff;
+}
+
+footer .bottom-footer p{
+    color: #fff;
+    margin-top: 10px;
+}
+

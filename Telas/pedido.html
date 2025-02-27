@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/pedido.css">
+    <link rel="stylesheet" href="css/responsive.css" media="screen">
+    <link rel="stylesheet" href="https://use.typekit.net/gvp4xoa.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="js/menu.js" defer></script>
+    <script src="js/btn-menu-mob.js" defer></script>
+    <script src="js/rolagem.js"></script>
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Snack Fast</title>
+</head>
+<body>
+
+    <header id="header">
+        <div class="interface">
+            <section class="logo">
+                <img src="images/logo_snack_fast.png" alt="Logotipo do site">
+            </section>
+
+            <section class="menu-desktop">
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">INÍCIO</a></li>
+                        <li><a href="#cardapio">CARDÁPIO</a></li>
+                        <li><a href="#foodtruck">SOBRE</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section class="btn-contato">
+                <a href="#contato">
+                    <button>CONTATO</button>
+                </a>
+            </section>
+
+            <div class="btn-menu-mob" id="btn-menu-mob">
+                <div class="line-menumob-1"></div>
+                <div class="line-menumob-2"></div>
+            </div>
+
+            <section class="menu-mobile" id="menu-mobile">
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">INÍCIO</a></li>
+                        <li><a href="#cardapio">CARDÁPIO</a></li>
+                        <li><a href="#foodtruck">SOBRE</a></li>
+                        <li><a href="#contato">CONTATO</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+    </header>
+
+    <section class="hero-site">
+        <div class="container">
+            <h1>Agendamento de Retirada de Lanches</h1>
+            
+            <form id="agendamento-form" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="lanche">Escolha o Lanche:</label>
+                    <select id="lanche" name="lanche" required>
+                        <optgroup label="Nenhum">
+                            <option value="Nenhum">Nenhum</option>
+                        </optgroup>
+    
+                        <optgroup label="Sanduíches">
+                            <option value="American Dog">American Dog</option>
+                            <option value="Sampa Dog">Sampa Dog</option>
+                            <option value="Dog Especial">Dog Especial</option>
+                            <option value="Dog Supremo">Dog Supremo</option>
+                        </optgroup>
+    
+                        <optgroup label="Hambúrgueres">
+                            <option value="Cheese Burguer">Cheese Burguer</option>
+                            <option value="Burguer Bacon">Burguer Bacon</option>
+                            <option value="Burguer Salada">Burguer Salada</option>
+                            <option value="Big Burguer Bacon">Big Burguer Bacon</option>
+                        </optgroup>
+    
+                        <optgroup label="Outros Sanduíches">
+                            <option value="Mega Cabalbresa">Mega Cabalbresa</option>
+                            <option value="Mega Frango">Mega Frango</option>
+                            <option value="Mega Toscana">Mega Toscana</option>
+                            <option value="Mega Pernil">Mega Pernil</option>
+                        </optgroup>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="bebida">Escolha a Bebida:</label>
+                    <select id="bebida" name="bebida" required>
+                        <optgroup label="Nenhum">
+                            <option value="Nenhum">Nenhum</option>
+                        </optgroup>
+                        
+                        <optgroup label="Refrigerantes">
+                            <option value="Guaraná Antarctica 350ML">Guaraná Antarctica 350ML</option>
+                            <option value="Coca Cola Lata 350ML">Coca Cola Lata 350ML</option>
+                        </optgroup>
+    
+                        <optgroup label="Sucos Natural">
+                            <option value="Suco Goiaba 300ML">Suco Goiaba 300ML</option>
+                            <option value="Suco Maracujá 300ML">Suco Maracujá 300ML</option>
+                        </optgroup>
+    
+                        <optgroup label="Outros">
+                            <option value="Agua Mineral 500ML">Água Mineral 500ML</option>
+                            <option value="Café 180ML">Café 180ML</option>
+                            <option value="Café com Leite 180ML">Café com Leite 180ML</option>
+                        </optgroup>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="data">Data de Retirada:</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="hora">Hora de Retirada:</label>
+                    <input type="time" id="hora" name="hora" required>
+                </div>
+    
+                <button type="submit">Agendar Retirada</button>
+            </form>
+    
+            <div id="confirmacao" class="hidden">
+                <h2>Agendamento Confirmado!</h2>
+                <p id="detalhes-agendamento"></p>
+                <button onclick="fecharConfirmacao()">Fechar</button>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="interface">
+            <section class="top-footer">
+                <a href="#"><button><i class="bi bi-instagram"></i></button></a>
+                <a href="#"><button><i class="bi bi-facebook"></i></button></a>
+                <a href="#"><button><i class="bi bi-tiktok"></i></button></a>
+            </section>
+
+            <section class="middle-footer">
+                <a href="#">Suporte</a>
+                <a href="#">Informações</a>
+                <a href="#">Marketing</a>
+            </section>
+
+            <section class="bottom-footer">
+                <p>Snack Fast 2024 &copy; Todos os direitos reservados.</p>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>

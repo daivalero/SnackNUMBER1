@@ -1,0 +1,283 @@
+/* ESTILIZAÇÃO GERAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "proxima-nova", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #E3E3E3;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+header .btn-contato button, .hero-site button, .foodtruck button{
+    font-size: 18px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+header .btn-contato button:hover, .hero-site button:hover, .foodtruck button:hover{
+    background-color: rgba(211, 119, 15, 0.979);
+    color: #fff;
+}
+
+/* ESTILO DA HEADER */
+
+header{
+    width: 100%;
+    padding: 40px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .5s;
+    background-color: rgba(211, 119, 15, 0.979);
+}
+
+header .interface{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img{
+    max-width: 80px;
+    transition: 0.2s;
+}
+
+header .logo img:hover{
+    transform: scale(1.05);
+}
+
+header .menu-desktop nav ul{
+    list-style-type: none;
+}
+
+header .menu-desktop nav ul li{
+    display: inline-block;
+    margin: 0 40px;
+}
+
+header .menu-desktop nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+header .menu-desktop nav ul li a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FF6347;
+    transition: width 0.3s ease;
+}
+
+
+.menu-desktop nav a:hover{
+    transform: scale(1.05);
+}
+
+header .btn-contato button{
+    width: 140px;
+    height: 50px;
+}
+
+/* ESTILO DO MENÚ DINÂMICO */
+
+header.rolar{
+    background-color: rgba(211, 119, 15, 0.979);
+    padding: 20px 0;
+    z-index: 10;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.329);
+}
+
+header.rolar .menu-desktop nav ul li a{
+    color: #fff;
+}
+
+header.rolar .btn-contato button{
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+header.rolar .btn-contato button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+header .btn-menu-mob .line-menumob-1.ativo1{
+    transform: rotate(45deg) translate(30%);
+}
+
+header .btn-menu-mob .line-menumob-2.ativo2{
+    transform: rotate(-45deg) translate(30%);
+    width: 30px;
+}
+
+/* ESTILO DO "SOBRE NÓS" EXTERNO */
+.sobre-container{
+    margin-top: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 20px;
+    margin-bottom: 80px;
+}
+
+.sobre-content{
+    max-width: 600px;
+}
+
+.sobre-content h1{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.sobre-content p{
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn-sobre a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-sobre{
+    display: inline-block;
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-sobre:hover{
+    background-color: #e64a19;
+}
+
+.sobre-imagem img{
+    margin-top: 20px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sobre-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.sobre-content{
+    max-width: 600px;
+}
+
+.sobre-content h1{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.sobre-content p{
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn-sobre a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-sobre{
+    display: inline-block;
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-sobre:hover{
+    background-color: #e64a19;
+}
+
+.sobre-imagem img{
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ESTILO DO RODAPÉ */
+
+footer{
+    background-color: rgba(211, 119, 15, 0.979);
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer .top-footer button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: .5s;
+}
+
+footer .top-footer button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+footer .middle-footer{
+    margin: 20px 0;
+}
+
+footer .middle-footer a{
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+footer .bottom-footer{
+    border-top: 2px solid #fff;
+}
+
+footer .bottom-footer p{
+    color: #fff;
+    margin-top: 10px;
+}
